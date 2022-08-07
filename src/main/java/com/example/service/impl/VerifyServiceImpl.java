@@ -34,7 +34,7 @@ public class VerifyServiceImpl implements VerifyService {
         template.opsForValue().set("verify:code"+email,code+"",10, TimeUnit.MINUTES);
 
         //发送信息详情
-        message.setSubject("【皇色直播间】您的注册验证码");
+        message.setSubject("【伟强齿科】您的注册验证码");
         message.setText("您的注册验证码为："+code+"，三分钟内有效，请及时完成注册！如非本人操作，请您忽略。");
         message.setTo(email);
         message.setFrom(from);
