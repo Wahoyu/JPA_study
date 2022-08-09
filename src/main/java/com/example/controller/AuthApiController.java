@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
-@Api(tags = "账户验证接口", description = "包括用户登录、注册、验证码请求等操作。")
+@Api(tags = "用户验证auth接口", description = "包括用户登录、注册、验证码请求等操作。")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthApiController {
@@ -56,6 +56,7 @@ public class AuthApiController {
     }
 
     //退出操作
+    @CrossOrigin
     @GetMapping("/logout-success")
     public RestBean<Void> logoutSuccess(){
         return new RestBean<>(200,"退出成功！");
