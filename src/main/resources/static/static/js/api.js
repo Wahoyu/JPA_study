@@ -12,6 +12,21 @@ function login() {
     })
 }
 
+//注册功能
+function register(){
+    post('http://localhost:8080/api/auth/register',{
+        username: $("#username").val(),
+        email: $("#input-email").val(),
+        password: $("#password").val(),
+        verify: $("#verify").val()
+    },function(data){
+        if(data.code === 200){
+            window.location="login.html"
+        }else{
+            alert(data.reason)
+        }
+    })
+}
 //发送验证码
 function askVerifyCode() {
     get('http://localhost:8080/api/auth/verify-code', {
@@ -24,7 +39,6 @@ function askVerifyCode() {
     })
 }
 
-//
 
 
 //退出登录
