@@ -54,7 +54,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 //关闭csrf
                 .and()
                 .csrf()
-                .disable();
+                .disable()
+
+                .cors();
     }
 
     @Override

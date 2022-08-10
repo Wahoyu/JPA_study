@@ -39,8 +39,6 @@ function askVerifyCode() {
     })
 }
 
-
-
 //退出登录
 function logout() {
     get('http://localhost:8080/api/auth/logout',{}, function (data) {
