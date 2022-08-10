@@ -1,6 +1,6 @@
 //登录请求
 function login() {
-    post('http://localhost:8080/api/auth/login',  {
+    post('http://192.168.89.132:8080/api/auth/login',  {
         username: $("#username").val(),
         password: $("#password").val()
     }, function (data) {
@@ -14,7 +14,7 @@ function login() {
 
 //注册功能
 function register(){
-    post('http://localhost:8080/api/auth/register',{
+    post('http://192.168.89.132:8080/api/auth/register',{
         username: $("#username").val(),
         email: $("#input-email").val(),
         password: $("#password").val(),
@@ -29,7 +29,7 @@ function register(){
 }
 //发送验证码
 function askVerifyCode() {
-    get('http://localhost:8080/api/auth/verify-code', {
+    get('http://192.168.89.132:8080/api/auth/verify-code', {
         email: $("#input-email").val()
     }, function (data) {
         //如果注册成功，直接跳转到登陆页面
@@ -41,7 +41,7 @@ function askVerifyCode() {
 
 //退出登录
 function logout() {
-    get('http://localhost:8080/api/auth/logout',{}, function (data) {
+    get('http://192.168.89.132:8080/api/auth/logout',{}, function (data) {
         if (data.code === 200) {
             window.location = "login.html"
         }
@@ -50,7 +50,7 @@ function logout() {
 
 //登录获取用户信息
 function initUserInfo() {
-    get('http://localhost:8080/api/user/info',{}, function (data) {
+    get('http://192.168.89.132:8080/api/user/info',{}, function (data) {
         if (data.code === 200) {
             $("#profile-name").text(data.data.username)
         } else {
